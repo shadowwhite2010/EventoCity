@@ -1,0 +1,29 @@
+@import 'variables';
+
+body{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: #7d7d7d;
+}
+
+a,a:visited,a:hover{
+    list-style: none;
+    text-decoration: none;
+}
+
+.auth-container{
+    min-height: 85vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.box{
+    border-radius: 15px;
+    box-shadow: $shadow;
+}
+
+
+@import 'auth';
+@import 'media';
