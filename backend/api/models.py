@@ -48,13 +48,28 @@ class User(AbstractBaseUser, PermissionsMixin):
     def __str__(self):
         return self.email
 
+class Sponser(models.Model):
+    sponserId = models.AutoField(primary_key=True, db_index=True, unique=True, editable=False)
+    userId = models.ForeignKey(User, on_delete=models.CASCADE)
+
 class Event(models.Model):
     EventId = models.AutoField(primary_key=True, db_index=True, unique=True, editable=False)
     EventName = models.CharField(max_length=100)
+    userId = models.ForeignKey(User, on_delete=models.CASCADE)
+    sponserId = models.ManyToManyField(Sponser)
     EventDescription = models.CharField(max_length=1000)
     DateOfEvent = models.DateTimeField()
     EventVenue = models.CharField(max_length=200)
     EventCost = models.IntegerField()
     EventPhotoName = models.CharField(max_length=300, null=True, blank=True)
     def __str__(self):
-        return self.EventName
+        return self.EventName       
+
+class Team(models.Model):
+    teamId = models.AutoField(primary_key=True, db_index=True, unique=True, editable=False)
+    title = models.CharField(max_length=300)
+    EventId = models.ForeignKey(Event, on_delete=models.CASCADE)
+
+class Participents(models.Model):
+    userId = models.ForeignKey(User, on_delete=models.CASCADE)
+    EventId = models.ForeignKey(Event, on_delete=models.CASCADE) 

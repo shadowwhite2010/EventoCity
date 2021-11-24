@@ -99,6 +99,7 @@ def user_create(request):
             return JsonResponse("Data Posted", safe=False)
         return JsonResponse(user_serializer.errors, safe=False) 
 
+
 @csrf_exempt
 @api_view(['GET', 'POST', "PUT", "PATCH", "DELETE"])
 @permission_classes([IsAuthenticated])
