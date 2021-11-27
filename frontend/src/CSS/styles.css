@@ -30,6 +30,45 @@ a, a:visited, a:hover {
           box-shadow: 0 0 30px 5px #555;
 }
 
+.flex-h {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row wrap;
+          flex-flow: row wrap;
+  border: 1px solid blue;
+  margin: 0 1rem;
+}
+
+.flex-v {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column wrap;
+          flex-flow: column wrap;
+  margin: 0 1rem;
+}
+
+.flex-center {
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.flex-between {
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.bd-bottom {
+  border-bottom: 1px solid #7d7d7d;
+}
+
 .box {
   height: 30rem;
   width: 60rem;
@@ -59,5 +98,98 @@ a, a:visited, a:hover {
 
 .box .signup-box {
   border-radius: 0 15px 15px 0;
+}
+
+.user-page .container {
+  width: 70rem;
+}
+
+.profile-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row wrap;
+          flex-flow: row wrap;
+  -webkit-box-align: stretch;
+      -ms-flex-align: stretch;
+          align-items: stretch;
+  min-width: 40rem;
+}
+
+.edit-and-pic {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.profile-pic {
+  width: 250px;
+  height: 250px;
+  padding: 0.8rem;
+  background-color: #cdcdcd;
+}
+
+.profile-pic img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: inherit;
+}
+
+.user-details {
+  color: #7d7d7d;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column wrap;
+          flex-flow: column wrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin: 0 2rem;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  border: 1px solid #7d7d7d;
+  border-radius: 10px;
+}
+
+table thead {
+  background-color: #7d7d7d;
+  color: #efefef;
+}
+
+td, tr {
+  border: 1px solid #aaa;
+  padding: 8px 12px;
+}
+
+table tr:nth-child(odd) {
+  background-color: #ffffff;
+}
+
+table thead, table thead tr {
+  background-color: #272742 !important;
+}
+
+table tr:nth-child(even) {
+  background-color: #cdcdcd;
 }
 /*# sourceMappingURL=styles.css.map */

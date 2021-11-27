@@ -1,0 +1,74 @@
+.user-page .container{
+    width: 70rem;
+}
+
+.profile-container{
+    display: flex;
+    flex-flow: row wrap;
+    // justify-content: space-around;
+    align-items: stretch;
+    // border: 1px solid red;
+    min-width: 40rem;
+}
+
+.edit-and-pic{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    // border: 1px solid purple;
+    
+}
+
+.profile-pic{
+    width: 250px;
+    height: 250px;
+    // border-radius: 50%;
+
+    padding: 0.8rem;
+    background-color: #cdcdcd;
+    // border: 1px solid green;
+    img{
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: inherit;
+    }
+}
+
+.user-details{
+    color: $primary;
+    // border: 1px solid red;
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: space-between;
+    // align-items: stretch;
+    margin: 0 2rem;
+    
+}
+
+table{
+    width: 100%;
+    border-collapse: collapse;
+    border: 1px solid $primary;
+    border-radius: 10px;
+}
+
+table thead{
+    background-color: $primary;
+    color: #efefef;
+}
+
+
+td, tr{
+    border: 1px solid #aaa;
+    padding: 8px 12px;
+    
+}
+
+table tr:nth-child(odd)
+{background-color: #ffffff;}
+table thead, table thead tr
+{background-color: $dark !important;}
+table tr:nth-child(even)
+{background-color: #cdcdcd;}
