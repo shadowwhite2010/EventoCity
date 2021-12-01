@@ -30,6 +30,44 @@ a, a:visited, a:hover {
           box-shadow: 0 0 30px 5px #555;
 }
 
+.flex-h {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row wrap;
+          flex-flow: row wrap;
+  margin: 0 1rem;
+}
+
+.flex-v {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column wrap;
+          flex-flow: column wrap;
+  margin: 0 1rem;
+}
+
+.flex-center {
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.flex-between {
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.bd-bottom {
+  border-bottom: 1px solid #7d7d7d;
+}
+
 .box {
   height: 30rem;
   width: 60rem;
@@ -59,5 +97,169 @@ a, a:visited, a:hover {
 
 .box .signup-box {
   border-radius: 0 15px 15px 0;
+}
+
+.user-page .container {
+  width: 70rem;
+}
+
+.profile-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row wrap;
+          flex-flow: row wrap;
+  -webkit-box-align: stretch;
+      -ms-flex-align: stretch;
+          align-items: stretch;
+  min-width: 40rem;
+}
+
+.edit-and-pic {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.profile-pic {
+  width: 250px;
+  height: 250px;
+  padding: 0.8rem;
+  background-color: #fcfcfc;
+}
+
+.profile-pic img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: inherit;
+}
+
+.user-det {
+  margin: 0 3rem;
+  width: 70%;
+}
+
+.user-details {
+  color: #7d7d7d;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column wrap;
+          flex-flow: column wrap;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  margin: 0 2rem;
+  -ms-flex-preferred-size: 25%;
+      flex-basis: 25%;
+}
+
+.user-details .btn {
+  width: 7rem;
+}
+
+.user-details-2 {
+  color: #7d7d7d;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column wrap;
+          flex-flow: column wrap;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  margin: 0 4rem;
+  padding-top: 2.5rem;
+}
+
+.primary-color {
+  color: #7d7d7d;
+}
+
+.section-100 {
+  padding: 100px 0;
+}
+
+.blog-card {
+  -webkit-box-shadow: 0 12px 17px rgba(129, 140, 151, 0.1);
+          box-shadow: 0 12px 17px rgba(129, 140, 151, 0.1);
+}
+
+.blog-card .blog-image {
+  width: 50%;
+  height: auto;
+  position: relative;
+}
+
+@media only screen and (max-width: 992px) {
+  .blog-card .blog-image {
+    max-height: 250px;
+    width: 100%;
+  }
+}
+
+.blog-card .blog-image .blog-thumbnail {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+@media only screen and (min-width: 992px) {
+  .blog-card .blog-image .blog-thumbnail {
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+}
+
+.blog-card .blog-container {
+  position: relative;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  padding-bottom: 85px !important;
+}
+
+.blog-card .blog-container a:hover {
+  text-decoration: none;
+  color: #646464;
+}
+
+.blog-card .blog-container .blog-category {
+  background: rgba(40, 167, 69, 0.1);
+  color: #28a745;
+}
+
+.blog-card .blog-container .blog-author {
+  height: 40px;
+  width: 40px;
+  border-radius: 40px;
+  margin-right: 10px;
+}
+
+.blog-card .blog-container .blog-footer {
+  padding: 15px 30px;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
 }
 /*# sourceMappingURL=styles.css.map */

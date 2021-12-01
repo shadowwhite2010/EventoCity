@@ -24,6 +24,31 @@ a,a:visited,a:hover{
     box-shadow: $shadow;
 }
 
+.flex-h{
+    display: flex;
+    flex-flow: row wrap;
+    // border: 1px solid blue;
+    margin: 0 1rem;
+}
+
+.flex-v{
+    display: flex;
+    flex-flow: column wrap;
+    margin: 0 1rem;
+}
+
+.flex-center{
+    justify-content: center;
+}
+.flex-between{
+    justify-content: space-between;
+}
+
+.bd-bottom{
+    border-bottom: 1px solid #7d7d7d;
+}
+
 
 @import 'auth';
+@import 'profile';
 @import 'media';
