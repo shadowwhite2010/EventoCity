@@ -29,5 +29,5 @@ urlpatterns = [
     path('auth/', include('djoser.urls.jwt')),
     path('accounts/', include('allauth.urls')),
     path('api/', include('api.urls')),
-    
+    path('dj-rest-auth/', include('dj_rest_auth.urls')),
 ]

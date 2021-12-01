@@ -43,6 +43,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'corsheaders',
     'rest_framework',
+    'rest_framework.authtoken',
+    'dj_rest_auth',
     'api.apps.ApiConfig',
     'allauth',
     'allauth.account',
@@ -106,6 +108,13 @@ ACCOUNT_AUTHENTICATION_METHOD = 'email'
 ACCOUNT_EMAIL_REQUIRED = True
 ACCOUNT_UNIQUE_EMAIL = True
 ACCOUNT_USER_MODEL_USERNAME_FIELD = 'email'
+
+
+
+# dj-rest-auth configuration --test
+REST_USE_JWT = True
+JWT_AUTH_COOKIE = 'my-app-auth'
+JWT_AUTH_REFRESH_COOKIE = 'my-refresh-token'
 
 
 # Database
@@ -173,6 +182,9 @@ SOCIALACCOUNT_PROVIDERS = {
             'client_id': config('SOCIAL_AUTH_GOOGLE_OAUTH2_KEY'),
             'secret': config('SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET'),
             'key': ''
+        },
+        'AUTH_PARAMS': {
+            'access_type': 'offline',
         }
     }
 }
