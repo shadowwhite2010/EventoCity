@@ -14,12 +14,12 @@ function Navbar() {
                         <li className="nav-item">
                             <NavLink to='/home' className="nav-link">Home</NavLink>
                         </li>
-                        <li className="nav-item">
-                            <NavLink to='/profile' className="nav-link">Profile</NavLink>
-                        </li>
 
                     </ul>
-
+                    <div className="d-flex">
+                        <NavLink className="btn btn-outline-success mx-1" to='/addevent'>Add Event</NavLink>
+                        <NavLink className="btn btn-outline-success mx-1" to='/profile'>Profile</NavLink>
+                    </div>
                 </div>
             </div>
         </nav>

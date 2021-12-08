@@ -55,6 +55,9 @@ INSTALLED_APPS = [
     'allauth.socialaccount.providers.google',
 ]
 
+CORS_ORIGIN_ALLOW_ALL = True
+
+
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
@@ -165,6 +168,9 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
 
 STATIC_URL = '/static/'
+
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 AUTHENTICATION_BACKENDS = (
     # 'social_core.backends.google.GoogleOAuth2',

@@ -169,6 +169,19 @@ a, a:visited, a:hover {
       flex-basis: 25%;
 }
 
+.center-object {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+
 .user-details .btn {
   width: 7rem;
 }
@@ -263,3 +276,157 @@ a, a:visited, a:hover {
   width: 100%;
 }
 /*# sourceMappingURL=styles.css.map */
+
+
+.logo-underline {
+  height: 1rem;
+  width: 5rem;
+  border: solid 3px #f0ad4e;
+  border-radius: 50%;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  position: absolute;
+  left: 2.5rem;
+  top: 1.5rem;
+  -webkit-transform: rotateZ(-5deg);
+          transform: rotateZ(-5deg);
+}
+
+.home-container {
+  min-height: 160vh;
+  background-color: #333446;
+  background-repeat: repeat;
+  background-size: 100%;
+  padding: 3em 0;
+  color: #ffffff;
+}
+
+.carousel-container {
+  background-color: #efefef;
+  margin-bottom: 3rem;
+  max-height: 30em;
+}
+
+.carousel {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  background-color: #333446;
+}
+
+.carousel-inner {
+  width: 93%;
+  position: relative;
+  border-radius: 5px;
+  height: auto;
+}
+
+.carousel-item img {
+  height: 30rem;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: center;
+     object-position: center;
+  width: 100%;
+}
+
+.my-container {
+  width: 70rem;
+  padding: 2rem 5rem;
+  background-color: #efefef;
+  color: #333446;
+  min-height: 30rem;
+}
+
+.trending-section {
+  background-color: #efefef;
+  padding: 2rem;
+}
+
+.trending-section h3 {
+  color: #121212;
+  text-transform: uppercase;
+  border-bottom: 1px solid #7d7d7d;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+.img-container {
+  position: relative;
+  height: 15rem;
+}
+
+.big-img-container {
+  max-height: 30rem;
+  position: relative;
+}
+
+.big-img-container img {
+  max-height: 30rem;
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.event-card .card {
+  position: relative;
+  display: block;
+  -webkit-box-shadow: 0 0 10px 1px #ddd;
+          box-shadow: 0 0 10px 1px #ddd;
+  -webkit-transition: 0.2s all;
+  transition: 0.2s all;
+}
+
+.event-card .card a, .event-card .card a:visited {
+  text-decoration: none;
+  color: #121212;
+}
+
+.event-card .card img {
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: bottom;
+     object-position: bottom;
+  height: 100%;
+}
+
+.event-card .card:hover {
+  -webkit-box-shadow: 0 0 20px 5px #bbb;
+          box-shadow: 0 0 20px 5px #bbb;
+}
+
+.card-body {
+  text-align: left;
+  padding: 1rem;
+}
+
+/* ########################## all events ############################## */
+.all-events {
+  margin: 2rem;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (minmax(350px, 1fr))[auto-fit];
+      grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 3rem;
+}
+
+.welcome-page {
+  height: 70vh;
+}
+
+.welcome-page img {
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  height: 100%;
+}
+
+.bg-secon {
+  background: url("../components/images/bg2.png");
+  background-size: 40%;
+  background-repeat: repeat;
+}

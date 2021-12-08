@@ -1,3 +1,4 @@
+from functools import partial
 from rest_framework.serializers import Serializer
 from .serializers import *
 from .models import User, Event
@@ -15,6 +16,22 @@ from rest_framework.permissions import IsAuthenticated
 from rest_framework.decorators import permission_classes
 # Create your views here.
 
+
+class UserList(ListAPIView):
+    queryset=User.objects.all()
+    serializer_class=UserSerializer
+
+class UserCreate(CreateAPIView):
+    queryset=User.objects.all()
+    serializer_class=UserSerializer
+
+def UserRetrieve(request,email):
+    user=User.objects.filter(email=email).first()
+    if user!=None:
+        # serializer=UserSerializer(user)
+        return JsonResponse({"msg":"email taken"}, safe=False)
+    else:
+        return JsonResponse({"msg":"email available"}, safe=False)
 
 @csrf_exempt
 def EventFunc(request, id=-1,):
@@ -35,17 +52,21 @@ def EventFunc(request, id=-1,):
                 return JsonResponse("404", safe=False)
 
     elif request.method == 'POST':
-        event_data = JSONParser().parse(request)
+        json_data=request.body
+        stream=io.BytesIO(json_data)
+        event_data = JSONParser().parse(stream)
+        print(event_data)
         events_serializer = EventSerializer(data=event_data)
         if events_serializer.is_valid():
             events_serializer.save()
             return JsonResponse("Added Successfully", safe=False)
-        return JsonResponse("Add fail", safe=False)
+        s = "Add fail"+str(events_serializer.data)
+        return JsonResponse(s, safe=False)
 
     elif request.method == 'PUT':
         event_data = JSONParser().parse(request)
         event = Event.objects.get(EventId = event_data['id'])
-        events_serializer = EventSerializer(event, event_data)
+        events_serializer = EventSerializer(event, data=event_data, partial=True)
         if events_serializer.is_valid():
             events_serializer.save()
             return JsonResponse("Updated Successfully", safe=False)
@@ -57,13 +78,9 @@ def EventFunc(request, id=-1,):
         return JsonResponse("delete success", safe=False)
 
 @csrf_exempt
-def SaveFile(request, id = -1):
+def SaveFile(request):
     file = request.FILES['myFile']
-    # print(file.name)
-    fname = "user"+str(id)+"."+file.name.split(".")[1]
-    if(default_storage.exists(fname)):
-        default_storage.delete(fname)
-    file_name = default_storage.save(fname, file)
+    file_name = default_storage.save(file.name, file)
 
     return JsonResponse(file_name, safe=False)
 
@@ -101,8 +118,8 @@ def user_create(request):
 
 
 @csrf_exempt
-@api_view(['GET', 'POST', "PUT", "PATCH", "DELETE"])
-@permission_classes([IsAuthenticated])
+# @api_view(['GET', 'POST', "PUT", "PATCH", "DELETE"])
+# @permission_classes([IsAuthenticated])
 def UserFunc(request, id = -1):
     if request.method == "GET":
         if id!=-1:
@@ -143,3 +160,8 @@ def UserFunc(request, id = -1):
             user_serializer = UserSerializer(stu)
             return JsonResponse(user_serializer.data, safe=False)
         return JsonResponse("problem bro", safe=False)   
+
+    elif request.method == 'DELETE':
+        stu = User.objects.get(id=id)
+        stu.delete()
+        return JsonResponse("delete success", safe=False)

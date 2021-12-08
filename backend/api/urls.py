@@ -14,13 +14,13 @@ class GoolgeAuth(SocialLoginView):
 
 
 urlpatterns = [
-    # path('list/', views.UserList.as_view()),
-    # path('create/', views.UserCreate.as_view()),
+    path('list/', views.UserList.as_view()),
+    path('create/', views.UserCreate.as_view()),
     url(r'^user$', views.UserFunc),
     url(r'^user/([0-9]+)$', views.UserFunc),
     url(r'^user/SaveFile/([0-9]+)$', views.SaveFile_u),
     url(r'^event$', views.EventFunc),
-    # path('retrieve/<str:email>', views.UserRetrieve),
+    path('retrieve/<str:email>', views.UserRetrieve),
     url(r'^event/([0-9]+)$', views.EventFunc),
     path('v1/rest-auth/google_auth/', GoolgeAuth.as_view(), 	 name='google_login'),
 

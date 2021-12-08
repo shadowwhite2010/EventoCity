@@ -4,7 +4,7 @@ from .models import *
 class UserSerializer(serializers.ModelSerializer):
     class Meta:
         model=User
-        fields=['id','email','full_name', 'password', 'UserPhotoName'] 
+        fields=['id','email','full_name', 'password', 'UserPhotoName', 'address'] 
     def create(self, validated_data):
         password = validated_data.pop('password', None)
         instance = self.Meta.model(**validated_data)
@@ -13,20 +13,18 @@ class UserSerializer(serializers.ModelSerializer):
         print(instance)
         instance.save()
         return instance
-
+ 
     
 class EventSerializer(serializers.ModelSerializer):
     class Meta:
         model = Event
-        fields = ('EventId', 
+        fields = ['EventId', 
                 'EventName',
+                'userId',
+                'sponserId',
                 'EventDescription',
                 'DateOfEvent',
                 'EventVenue',
                 'EventCost',
-                'EventPhotoName')
-    def create(self, validated_data):
-        instance = self.Meta.model(**validated_data)
-        print(instance)
-        instance.save()
-        return instance
+                'EventPhotoName']
+        

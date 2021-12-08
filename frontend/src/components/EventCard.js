@@ -20,7 +20,7 @@ function EventCard() {
 							<div className="blog-footer d-flex justify-content-between align-items-center border-top">
 								<div>
 									<a href="#!"><img src="/images/user.jpg" alt="" className="blog-author shadow"/></a>
-									<a href="#!" className="text-dark">Kiran Acharya</a>
+									<a href="#!" className="text-dark">Shadow White</a>
 								</div>
 								<small className="text-muted">Jan 12, 2019</small>
 							</div>

@@ -39,6 +39,7 @@ class User(AbstractBaseUser, PermissionsMixin):
     is_active = models.BooleanField(default=True)
     is_staff = models.BooleanField(default=False)
     UserPhotoName = models.CharField(max_length=200, null = True)
+    address = models.CharField(max_length=200, null= True)
     objects = UserAccountManager()
 
     USERNAME_FIELD = 'email'
@@ -56,7 +57,7 @@ class Event(models.Model):
     EventId = models.AutoField(primary_key=True, db_index=True, unique=True, editable=False)
     EventName = models.CharField(max_length=100)
     userId = models.ForeignKey(User, on_delete=models.CASCADE)
-    sponserId = models.ManyToManyField(Sponser)
+    sponserId = models.ForeignKey(Sponser, on_delete=models.CASCADE)
     EventDescription = models.CharField(max_length=1000)
     DateOfEvent = models.DateTimeField()
     EventVenue = models.CharField(max_length=200)
